@@ -1,0 +1,20 @@
+Description: >
+  Goodhope Ordu - Udagram Project
+
+  Template for the servers an resources required by the Udagram app
+
+Parameters:
+  EnvironmentName:
+    Description: An environment name that will be prefixed to resource names
+    Type: String
+
+Resources:
+
+  WebAppLB:
+
+Outputs:
+  LBEndpoint:
+    Description: Load Balancer DNS Name
+    Value: !Sub http://${WebAppLB.DNSName}
+    Export:
+      Name: !Sub ${EnvironmentName}-LB-DNS-ENDPOINT
